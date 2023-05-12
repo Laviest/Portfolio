@@ -1,0 +1,847 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    width: 100%;
+    z-index: 999;
+    position:fixed;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.logo {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+    display: flex;
+}
+
+.nav--logo {
+    width: 49px;
+    height: 65px;
+    margin-top: 5px;
+    margin-right: 15px;
+}
+
+.nav--links {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.nav--links li {
+    list-style: none;
+    color: black;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.nav--links a {
+    color: black;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+
+}
+
+.nav--links a:hover {
+    color: #1c9fbb
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1024px){
+    .nav--links {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 768px){
+
+    .body {
+        width: 100%;
+    }
+
+    .navbar {
+        position:static;
+    }
+
+    .nav--links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        background-color: #1c9fbb;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        
+    }
+
+    .nav--links a {
+        color: white;
+    }
+
+    .nav--links li {
+        opacity: 0;
+        color: white;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .burger div {
+        background-color: black;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+    opacity: 1;
+    display: flex;
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.scrolled {
+    background-color: #1c9fbb;
+    color: white;
+}
+
+.navbar.scrolled > .nav--links > li {
+    color: white;
+}
+
+/* Hero */
+
+.main--hero-div {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 300px 0px 300px;
+}
+
+.pf-bg {
+    position: absolute;
+    width: 440px;
+    margin-top: 193px;
+    margin-left: 39.4%;
+    z-index: -1;
+}
+
+.main--hero-div > div > h3:nth-child(1) {
+    font-size: 30px;
+    margin-top: 295px;
+    margin-bottom: 10px;
+}
+
+.main--hero-div > div > h3 {
+    font-size: 30px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    font-weight: 800;
+
+}
+
+.main--hero-div > div > h1 {
+    font-size: 60px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.main--pf {
+    width: 400px;
+    margin-top: 220px;
+    border-radius: 70px;
+}
+
+.hero-buttons {
+    display: flex;
+    margin-top: 50px;
+}
+
+.button1 {
+    font-size: 23px;
+    width: 150px;
+    height: 50px;
+    background-color: #1c9fbb;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.button2 {
+    font-size: 23px;
+    font-weight: 600px;
+    width: 200px;
+    height: 50px;
+    color: #1c9fbb;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.scribble1 {
+    position: absolute;
+    width: 100px;
+    left: 47%;
+    top: 75%;
+    rotate: -20deg;
+}
+
+.scribble2 {
+    position: absolute;
+    top: 15%;
+    left: 35%;
+}
+
+.scribble3 {
+    position: absolute;
+    left: 90%;
+    top: 23%;
+    width: 30px;
+}
+
+.scribble6 {
+    position: absolute;
+    left: 84%;
+    top: 70%;
+    transform: rotate(200deg);
+    width: 30px;
+}
+
+.scribble4 {
+    position: absolute;
+    width: 50px;
+    top: 62.5%;
+    left: 15.5%;
+}
+
+.scribble5 {
+    position: absolute;
+    left: 7%;
+    top: 45%;
+    width: 30px;
+}
+
+@media screen and (max-width: 768px) {
+    .main--hero-div {
+        display: block;
+        margin: 0px 10px 0px 20px;
+    }
+    
+    .pf-bg {
+        position: absolute;
+        width: 440px;
+        margin-top: 0px;
+        margin-left: 39.4%;
+        z-index: -1;
+    }
+    
+    .main--hero-div > div > h3:nth-child(1) {
+        font-size: 22px;
+        margin-top: 100px;
+        margin-bottom: 0px;
+        text-align: center;
+    }
+    
+    .main--hero-div > div > h3 {
+        font-size: 22px;
+        margin-bottom: 0px;
+        margin-top: 10px;
+        font-weight: 800;
+        text-align: center;
+    
+    }
+    
+    .main--hero-div > div > h1 {
+        font-size: 40px;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        font-weight: 800;
+        text-align: center;
+    }
+    
+    .main--pf {
+        width: 300px;
+        margin-top: 60px;
+        margin-left: 30px;
+        border-radius: 70px;
+    }
+    
+    .hero-buttons {
+        display: flex;
+        margin-top: 50px;
+    }
+    
+    .button1 {
+        font-size: 23px;
+        width: 150px;
+        height: 50px;
+        background-color: #1c9fbb;
+        border: none;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    
+    .button2 {
+        font-size: 23px;
+        font-weight: 600px;
+        width: 200px;
+        height: 50px;
+        color: #1c9fbb;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        background-color: white;
+    }
+
+    .scribble1 {
+        position: absolute;
+        width: 60px;
+        left: 17%;
+        top: 87%;
+        rotate: -20deg;
+        display: none;
+    }
+    
+    .scribble2 {
+        position: absolute;
+        top: 15%;
+        left: 70%;
+        width: 60px;
+        z-index: -1;
+    }
+    
+    .scribble3 {
+        position: absolute;
+        left: 90%;
+        top: 3%;
+        width: 30px;
+        display: none;
+    }
+    
+    .scribble6 {
+        position: absolute;
+        left: 84%;
+        top: 50%;
+        transform: rotate(200deg);
+        width: 30px;
+        display: none;
+    }
+    
+    .scribble4 {
+        position: absolute;
+        width: 40px;
+        top: 44.5%;
+        left: -1%;
+    }
+    
+    .scribble5 {
+        position: absolute;
+        left: 12%;
+        top: 15%;
+        width: 20px;
+        display: none;
+    }
+    
+}
+
+/* ABOUT ME */
+
+.about-me {
+    background-color: #1c9fbb;
+    display: flex;
+    margin-top: 260px;
+    height: 650px;
+}
+
+.about-me-img {
+    width: 500px;
+    height: 300px;
+    margin-top: 210px;
+    margin-left: 430px;
+    border-radius: 15px;
+}
+
+.about-me-img2 {
+    position: absolute;
+    width: 500px;
+    margin-left: 50px;
+    margin-top: 90px;
+    border-radius: 15px;
+}
+
+.about-me-text {
+    margin-top: 50px;
+    width: 800px;
+    margin-left: 50px;
+    margin-right: 0px;
+}
+
+.about-me-text > div > p {
+    color: whitesmoke;
+    font-size: 23px;
+}
+
+.about-me-text > h1 {
+    color: white;
+    font-size: 55px;
+    margin-top: 20px;
+    margin-left: 60px;
+    /* text-align: center; */
+}
+
+.about-me-text > p {
+    margin-left: 60px;
+    color: whitesmoke;
+    font-size: 26px;
+    margin-top: 20px;
+    /* text-align: center; */
+}
+
+.about-me-code-icon {
+    margin-left: 60px;
+    width: 50px;
+    margin-top: 30px;
+}
+
+.about-me-code-icon-2 {
+    margin-left: 60px;
+    width: 50px;
+    margin-top: 30px;
+}
+
+.coding-for {
+    color: whitesmoke;
+    font-size: 27px;
+    margin-top: 40px;
+    margin-left: 15px;
+}
+
+.coding-for-1 {
+    color: whitesmoke;
+    font-size: 27px;
+    margin-top: 40px;
+    margin-left: 15px;
+}
+
+.coding-for-2 {
+    color: whitesmoke;
+    font-size: 27px;
+    margin-top: 40px;
+    margin-left: 15px;
+    display: none;
+}
+
+
+.svg-animation > svg {
+    width: 500px;
+    margin-left: 150px;
+    padding-bottom: 80px;
+    height: 600px;
+    margin-top: 40px;
+}
+
+@media screen and (max-width: 768px) {
+    .about-me {
+        background-color: #1c9fbb;
+        display: block;
+        margin-top: 130px;
+        height:1130px;
+    }
+    
+    .about-me-text {
+        margin-top: 0px;
+        width: 390px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    
+    .about-me-text > div > p {
+        font-size: 23px;
+        text-align: center;
+    }
+    
+    .about-me-text > h1 {
+        font-size: 45px;
+        margin-top: 20px;
+        margin-left: 0px;
+        text-align: center;
+    }
+    
+    .about-me-text > p {
+        margin-left: 20px;
+        margin-right: 20px;
+        font-size: 22px;
+        margin-top: 20px;
+        text-align: center;
+    }
+    
+    .about-me-code-icon {
+        margin-left: 20px;
+        width: 40px;
+        height: 40px;
+        margin-top: 30px;
+    }
+    
+    .about-me-code-icon-2 {
+        margin-left: 20px;
+        width: 40px;
+        height: 40px;
+        margin-top: 30px;
+    }
+
+    .coding-for-1 {
+        display: none;
+    }
+    
+    .coding-for {
+        color: whitesmoke;
+        font-size: 20px;
+        margin-top: 40px;
+        margin-left: 10px;
+        /* display: none; */
+    }
+    
+    .coding-for-2 {
+        display: block;
+        font-size: 20px;
+        margin-top: 40px;
+        margin-left: 10px;
+    }
+    
+    
+    .svg-animation > svg {
+        width: 300px;
+        margin-left: 50px;
+        padding-bottom: 0px;
+        height: 450px;
+    }
+    
+}
+
+.programming-title {
+    position: absolute;
+    z-index: -1;
+    margin-left: 480px;
+    width: 700px;
+}
+
+.programming-skills {
+    text-align: center;
+    font-size: 45px;
+    margin-top: 100px;
+    padding-top: 45px;
+    font-weight: 800;
+}
+
+.p-skills {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.p-skills-js {
+    width: 100px;
+    margin-left: 35px;
+    margin-bottom: 10px;
+
+}
+
+.p-skills-bs {
+    width: 100px;
+    margin-bottom: 10px;
+    margin-left: 25px;
+}
+
+.p-div {
+    display: flex;
+    justify-content: space-between;
+    margin: 90px 160px 0px 160px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .p-div {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: space-between;
+        margin: 40px 20px 0px 20px;
+    }
+
+    .programming-skills {
+        text-align: center;
+        font-size: 35px;
+        margin-top: 60px;
+        padding-top: 0px;
+        font-weight: 800;
+    }
+    
+    .p-skills {
+        width: 60px;
+        margin-bottom: 10px;
+        margin-left: 19px;
+    }
+    
+    .p-skills-js {
+        width: 60px;
+        margin-left: 20px;
+        margin-bottom: 10px;
+    
+    }
+    
+    .p-skills-bs {
+        width: 60px;
+        margin-bottom: 10px;
+        margin-left: 20px;
+    }
+
+    .p-text {
+        font-size: 18px;
+        margin-bottom: 30px;
+        margin-right: 20px;
+    }
+}
+
+.my-projects {
+    text-align: center;
+    font-size: 45px;
+    margin-top: 120px;
+    padding-top: 45px;
+    font-weight: 800;
+    margin-bottom: 60px;
+}
+
+.project1-div {
+    display: flex;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 10px;
+    height: 510px;
+}
+
+.project1-div > a > img {
+    width: 800px;
+    margin-left: 94px;
+    margin-top: 2.5%;
+    box-shadow: 0 3px 10px rgba(0,0,0,.5);
+}
+
+.project1-div > a > img:hover {
+    cursor: pointer;
+}
+
+.project1-text {
+    width: 500px;
+    margin-top: 12%;
+    margin-left: 4%;
+}
+.project1-text > h2 {
+    font-size: 40px;
+}
+
+.project1-text > p, .project-library > p {
+    font-size: 25px;
+    margin-top: 2%;
+}
+
+.project-library {
+    display: flex;
+}
+
+.project-library > img {
+    width: 40px;
+    margin-top: 8px;
+    margin-left: 10px;
+}
+
+.project-image-overlay {
+    background-color: black;
+    position: absolute;
+    height: 434px;
+    width: 800px;
+    opacity: 0;
+    margin-left: 5.63%;
+    margin-top: 1.3%;
+}
+
+.project-image-overlay:hover {
+    opacity: 0.2;
+    transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .my-projects {
+        text-align: center;
+        font-size: 35px;
+        margin-top: 80px;
+        padding-top: 0px;
+        font-weight: 800;
+        margin-bottom: 60px;
+    }
+    
+    .project1-div {
+        display: block;
+        margin-left: 20px;
+        margin-right: 5%;
+        border-radius: 10px;
+        height: 510px;
+    }
+    
+    .project1-div > a > img {
+        width: 350px;
+        margin-left: 0%;
+        margin-top: 0%;
+    }
+    
+    .project1-text {
+        width: 350px;
+        margin-top: 12%;
+        margin-left: 0;
+    }
+
+    .project1-text > h2 {
+        font-size: 27px;
+        text-align: center;
+    }
+    
+    .project1-text > p, .project-library > p {
+        font-size: 22px;
+        margin-top: 5%;
+        text-align: center;
+    }
+
+    .project-library > p {
+        margin-left: 25px;
+    }
+    
+    .project-library > img {
+        width: 30px;
+        height: 30px;
+        margin-top: 15px;
+        margin-left: 10px;
+    }
+    
+    .project-image-overlay {
+        height: 190px;
+        width: 350px;
+        opacity: 0;
+        margin-left: 0px;
+        margin-top: 0%;
+    }
+    
+}
+
+.lets-connect {
+    margin-top: 120px;
+    background-color: #1c9fbb;
+    height: 370px;
+}
+
+.lets-connect > h1 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 800;
+    color: white;
+    padding-top: 60px;
+}
+
+.lets-connect > p {
+    color: white;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.connect-images {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 660px;
+    margin-right: 660px;
+}
+
+.c-img {
+    margin-top: 40px;
+    width: 60px;
+    height: 60px;
+}
+
+@media screen and (max-width: 768px) {
+    .lets-connect {
+        margin-top: 0px;
+        height: 370px;
+    }
+    
+    .lets-connect > h1 {
+        text-align: center;
+        font-size: 35px;
+    }
+    
+    .lets-connect > p {
+        margin-top: 50px;
+    }
+    
+    .connect-images {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+}
